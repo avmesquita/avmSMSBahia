@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "avmSMSBahia", "avmSMSBahia\avmSMSBahia.csproj", "{C9F0248B-408B-4D88-837D-1AE52C40B36D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "avmSMSBahia.Test", "avmSMSBahia.Test\avmSMSBahia.Test.csproj", "{E39DFE1E-9751-4419-A691-76D595BA3281}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9F0248B-408B-4D88-837D-1AE52C40B36D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9F0248B-408B-4D88-837D-1AE52C40B36D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9F0248B-408B-4D88-837D-1AE52C40B36D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9F0248B-408B-4D88-837D-1AE52C40B36D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E39DFE1E-9751-4419-A691-76D595BA3281}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E39DFE1E-9751-4419-A691-76D595BA3281}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E39DFE1E-9751-4419-A691-76D595BA3281}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E39DFE1E-9751-4419-A691-76D595BA3281}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6CD01668-7E7C-409E-8B04-D586F8BC7ACE}
+	EndGlobalSection
+EndGlobal

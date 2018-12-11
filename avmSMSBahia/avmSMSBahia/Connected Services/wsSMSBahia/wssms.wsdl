@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Envios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="tipo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnviosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnviosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Retornos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="serial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="conta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sub_conta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Periodo_inicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Periodo_final" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetornosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Status">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="EnviosSoapIn">
+    <wsdl:part name="parameters" element="tns:Envios" />
+  </wsdl:message>
+  <wsdl:message name="EnviosSoapOut">
+    <wsdl:part name="parameters" element="tns:EnviosResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetornosSoapIn">
+    <wsdl:part name="parameters" element="tns:Retornos" />
+  </wsdl:message>
+  <wsdl:message name="RetornosSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornosResponse" />
+  </wsdl:message>
+  <wsdl:message name="StatusSoapIn">
+    <wsdl:part name="parameters" element="tns:Status" />
+  </wsdl:message>
+  <wsdl:message name="StatusSoapOut">
+    <wsdl:part name="parameters" element="tns:StatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wssmsSoap">
+    <wsdl:operation name="Envios">
+      <wsdl:input message="tns:EnviosSoapIn" />
+      <wsdl:output message="tns:EnviosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Retornos">
+      <wsdl:input message="tns:RetornosSoapIn" />
+      <wsdl:output message="tns:RetornosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Status">
+      <wsdl:input message="tns:StatusSoapIn" />
+      <wsdl:output message="tns:StatusSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wssmsSoap" type="tns:wssmsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Envios">
+      <soap:operation soapAction="http://tempuri.org/Envios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Retornos">
+      <soap:operation soapAction="http://tempuri.org/Retornos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Status">
+      <soap:operation soapAction="http://tempuri.org/Status" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wssmsSoap12" type="tns:wssmsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Envios">
+      <soap12:operation soapAction="http://tempuri.org/Envios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Retornos">
+      <soap12:operation soapAction="http://tempuri.org/Retornos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Status">
+      <soap12:operation soapAction="http://tempuri.org/Status" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wssms">
+    <wsdl:port name="wssmsSoap" binding="tns:wssmsSoap">
+      <soap:address location="http://maxx.mobi/wssms.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wssmsSoap12" binding="tns:wssmsSoap12">
+      <soap12:address location="http://maxx.mobi/wssms.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
